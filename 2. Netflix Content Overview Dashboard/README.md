@@ -1,6 +1,9 @@
 # 📊 Task 2: Netflix Content Overview Dashboard
 
-![Task 2 Dashboard Overview](assets/dashboard_overview.png)
+<p align="center">
+  <img src="assets/netflix_dashboard.png" width="48%" />
+  <img src="assets/netflix_dashboard2.png" width="48%" />
+</p>
 
 ## 📌 Task Overview
 Building upon the normalized Star Schema from Task 1, **Task 2** focuses on designing a professional, 2-page executive business intelligence dashboard[cite: 6]. This report delivers comprehensive library analytics, tracking high-level platform growth, regional content distributions, and deep comparative metrics between Movies and TV Shows.
