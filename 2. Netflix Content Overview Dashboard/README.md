@@ -21,6 +21,3 @@ Building upon the normalized Star Schema from Task 1, **Task 2** focuses on desi
 * **Strategic Portfolio Shift:** Stacked analytical bar charts tracking annual release trends across formats to evaluate platform pivot strategies toward episodic content.
 * **Granular Duration & Season Distribution:** Grouped distribution charts evaluating movie runtimes (Under 90 min, 90–120 min, Over 120 min) versus TV show lifespan longevity (1 Season vs. 2+ Seasons).
 * **Interactive Filtering Controls:** Global report slicers empowering users to filter seamlessly by Country, Audience rating, and Release Year ranges, supplemented by a dedicated **Reset Filters** action button.
-
-    ├── dashboard_overview.png             <-- Page 1: Catalog Overview UI screenshot
-    └── movies_vs_tv_shows.png             <-- Page 2: Comparative Analysis UI screenshot
