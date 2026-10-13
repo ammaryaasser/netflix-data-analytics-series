@@ -1,7 +1,5 @@
 # 🎬 Netflix End-to-End Data Analytics Series (Task 1: Data Cleaning & Modeling)
 
-![Power BI Model](assets/data_model_preview.png)
-
 ## 📌 Project Overview
 This repository represents **Task 1 (Data Preparation & Power BI Setup)** of a **6-Part End-to-End Netflix Business Intelligence Project** powered by **Auspify**. 
 
