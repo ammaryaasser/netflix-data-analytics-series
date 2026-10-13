@@ -1,7 +1,7 @@
 # 🎬 Netflix End-to-End Business Intelligence & Analytics Series
 
 <p align="center">
-  <img src="assets/Netflix_Logomark.png" alt="Netflix Logo" width="100%" height="200px"/>
+  <img src="assets/Netflix_Logomark.png" alt="Netflix Logo" width="100%" "/>
 </p>
 
 ## 📌 Project Overview
