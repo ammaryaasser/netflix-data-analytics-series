@@ -42,11 +42,5 @@ During initial data profiling, several critical data anomalies were identified a
 * **Final Verified Row Count:** **8,786 Titles** (6,123 Movies | 2,663 TV Shows).
 
 ---
-
-## 📁 Repository Contents
-
-```text
-├── README.md                              <-- Project Overview & ETL Documentation
-├── Task 1 - Documentation.pdf             <-- Step-by-step cleaning documentation
 ├── Task 1 - Netflix data preparation.pbix <-- Power BI model file
 └── assets/                                <-- Data model screenshots & diagrams
