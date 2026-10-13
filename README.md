@@ -1,6 +1,8 @@
 # 🎬 Netflix End-to-End Business Intelligence & Analytics Series
 
-![Netflix Dashboard Banner](assets/netflix_logo.png)
+<p align="center">
+  <img src="assets/netflix_logo.png" alt="Netflix Logo" width="300"/>
+</p>
 
 ## 📌 Project Overview
 This repository contains a comprehensive **6-Part End-to-End Netflix Data Analytics Project**. The project simulates a real-world business intelligence workflow—starting from raw data ingestion and advanced ETL cleaning, all the way to building multi-page executive dashboards and strategic data models.
