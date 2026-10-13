@@ -41,8 +41,3 @@ To allow flexible multi-dimensional filtering across titles that belong to multi
 * **`Titles` 1 ─── * `Genres`** (One-to-Many relationship on `show_id`)[cite: 3]
 * **`Titles` 1 ─── * `Directors`** (One-to-Many relationship on `show_id`)[cite: 3]
 
----
-
-## 📐 Measure & DAX Validation Setup
-
-To prevent inflated or duplicated counts when aggregating metrics across multi-genre or multi-director items, explicit DAX measures were implemented[cite: 3]:
