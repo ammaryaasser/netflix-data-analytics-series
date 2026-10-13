@@ -47,16 +47,3 @@ The repository is structured around a progressive 6-stage analytics lifecycle:
 * **Shifting Strategy Analysis:** Comparative stacked bar chart tracking annual release trends between Movies and TV Shows to identify strategic portfolio shifts over time[cite: 16].
 * **Duration & Season Granularity:** Grouped bar charts segmenting movie runtimes (Under 90 min, 90–120 min, Over 120 min) and TV show season longevity (1 Season vs. 2+ Seasons)[cite: 16].
 * **Interactive Navigation & Slicers:** Full navigation control with interactive slicers for Country, Audience rating, Release Year range sliders, and a one-click **Reset Filters** button[cite: 15, 16].
-
----
-
-## 📁 Repository Structure
-
-```text
-├── README.md                              <-- Master project overview & roadmap
-├── Task 1/
-│   ├── Task 1 - Documentation.pdf         <-- Detailed ETL and data cleaning decisions[cite: 2]
-│   └── Task 1 - Netflix data prep.pbix    <-- Power BI data model file[cite: 4]
-├── Task 2/
-│   └── Netflix Content Overview.pbix      <-- Multi-page Power BI dashboard[cite: 5]
-└── assets/                                <-- High-resolution UI screenshots & diagrams
