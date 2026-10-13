@@ -1,6 +1,6 @@
 # 🛠️ Task 1: Data Preparation & Star Schema Data Modeling
 
-![Task 1 Model Architecture](assets/data_model_star_schema.png)
+![Task 1 Model Architecture](assets/Data_relation.jpg)
 
 ## 📌 Task Overview
 The objective of **Task 1** is to build the data foundation for the entire 6-part Netflix analytics series. This phase focuses on raw dataset profiling, advanced ETL data transformation in Power Query, handling missing data, resolving data quality issues, and constructing a fully normalized **Star Schema Data Model** in Power BI[cite: 3].
