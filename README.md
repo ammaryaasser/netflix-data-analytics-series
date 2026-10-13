@@ -1,43 +1,60 @@
-# 🎬 Netflix End-to-End Data Analytics Series (Task 1: Data Cleaning & Modeling)
+# 🎬 Netflix End-to-End Business Intelligence & Analytics Series
+
+![Netflix Dashboard Banner](assets/dashboard_overview.png)
 
 ## 📌 Project Overview
-This repository represents **Task 1 (Data Preparation & Power BI Setup)** of a **6-Part End-to-End Netflix Business Intelligence Project** powered by **Auspify**. 
-
-The goal of this foundational phase is to transform raw, unformatted Netflix catalog data into a clean, normalized, and validated **Star-Schema Data Model** in Power Query, laying the ground truth for all subsequent dashboards and analytical tasks.
+This repository contains a comprehensive **6-Part End-to-End Netflix Data Analytics Project**. The project simulates a real-world business intelligence workflow—starting from raw data ingestion and advanced ETL cleaning, all the way to building multi-page executive dashboards and strategic data models.
 
 ---
 
-## 🛣️ The 6-Task Netflix Project Roadmap
+## 🛣️ Project Roadmap & Architecture
 
-- [x] **Task 1: Data Preparation & Power BI Setup** *(Current Repository)*
-- [x] **Task 2: Netflix Content Overview Dashboard**
-- [ ] **Task 3: Global Content Insights Dashboard**
-- [ ] **Task 4: Content Growth & Trend Analysis**
-- [ ] **Task 5: Audience & Content Category Intelligence Dashboard**
-- [ ] **Task 6: Executive Business Intelligence Dashboard**
+The repository is structured around a progressive 6-stage analytics lifecycle:
 
----
-
-## 🔍 Data Problems & ETL Cleaning Decisions (Power Query)
-
-During initial data profiling, several critical data anomalies were identified and resolved:
-
-| # | Data Problem Identified | Cleaning Decision & Transformation |
-|---|-------------------------|-----------------------------------|
-| 1 | **Quoted Line Break Error** | Fixed record `s8420` (*The Memphis Belle*), which contained an embedded line feed causing line splits and `TV-PG` date errors. Set source to *Ignore quoted line breaks* and replaced line feeds with spaces. |
-| 2 | **Text Dates under Regional Settings** | Converted `date_added` from text (`M/D/YYYY`) to `Date` data type using `Change Type with Locale (English, United States)` to avoid parsing conflicts in non-US locales. |
-| 3 | **Hidden Whitespace** | Applied `Trim` to all text columns prior to deduplication. |
-| 4 | **Duplicates under Unique IDs** | Identified duplicate titles with distinct `show_id` values (`15-Aug`, `22-Jul`, `9-Feb`, `Consequences`). Removed duplicates across all fields except `show_id`, reducing total rows from **8,790 to 8,786**. |
-| 5 | **Fake Blanks ("Not Given")** | Replaced `"Not Given"` string placeholders in `director` (2,587 rows) and `country` (287 rows) with `"Unknown"` instead of dropping records. |
-| 6 | **Mixed Unit Durations** | Split `duration` into numerical `duration_value` and categorical `duration_unit` (`min` vs. `Season`). |
-| 7 | **Multi-Valued Comma-Separated Columns** | Normalized `listed_in` (genres) and `director` into separate dimension tables (`Genres` and `Directors`) using *Split Column by Delimiter into Rows* to enable accurate count metrics. |
-| 8 | **Derived Columns** | Created `year_added`, `month_added`, and `rating_group` (*Kids, Teens, Adults, Unrated*). |
+| Stage | Task Name | Level | Core Focus & Deliverables | Status |
+| :---: | :--- | :---: | :--- | :---: |
+| **Task 1** | **Data Preparation & Power BI Setup** | Easy | Data profiling, fixing line breaks, locale date conversions, deduplication, handling missing values, and building a normalized Star-Schema model[cite: 2, 3]. | ✅ Completed |
+| **Task 2** | **Netflix Content Overview Dashboard** | Easy | Multi-page interactive dashboard, core KPI tracking, content distribution analysis, and movie vs. TV show comparison[cite: 15, 16]. | ✅ Completed |
+| **Task 3** | **Global Content Insights Dashboard** | Medium | Geographic analysis, map charts, drill-down reports, and regional content volume rankings. | ⏳ Upcoming |
+| **Task 4** | **Content Growth & Trend Analysis** | Medium | Time-series modeling, release year trends, yearly growth tracking, and trend indicators using DAX. | ⏳ Upcoming |
+| **Task 5** | **Audience & Content Category Intelligence** | Advanced | Audience rating segmentation, category performance visuals, advanced DAX measures, and executive reporting. | ⏳ Upcoming |
+| **Task 6** | **Executive Business Intelligence Solution** | Advanced | Consolidating business metrics, multi-page dashboard architecture, drill-through reports, and strategic recommendations. | ⏳ Upcoming |
 
 ---
 
-## 📐 Data Model & Validation
+## 📊 Summary of Completed Tasks
 
-* **Schema Type:** Star Schema (Fact table `Titles` linked to `Genres` and `Directors` dimensions via `show_id` with 1-to-Many bidirectional filtering).
-* **Validation Logic:** Created DAX validation measures using `DISTINCTCOUNT(show_id)` to ensure multi-genre titles are not overcounted.
-* **Final Verified Row Count:** **8,786 Titles** (6,123 Movies | 2,663 TV Shows).
+### Task 1: Data Preparation & ETL Workflow (Power Query)
+* **Data Cleansing:** Resolved quoted line break errors (record `s8420`), applied locale-aware English (United States) date parsing, trimmed whitespace, and purged duplicates (reducing total catalog count from 8,790 to 8,786 rows)[cite: 2, 3].
+* **Missing Value Treatment:** Replaced `"Not Given"` string placeholders in `director` and `country` with `"Unknown"`[cite: 2].
+* **Data Modeling:** Normalized multi-valued attributes into separate dimension tables (`Genres` and `Directors`) and established a clean **Star Schema** connected to the `Titles` fact table[cite: 3].
+* **Validation:** Implemented strict row validation using `DISTINCTCOUNT(show_id)` to ensure accurate aggregate metrics across overlapping genre categories[cite: 3].
 
+---
+
+### Task 2: Netflix Content Overview Dashboard (2-Page Executive Report)
+
+#### Page 1: Catalog Overview
+* **Headline Metrics (KPIs):** Total Catalog Titles (**8,786**), Total Movies (**6,123**), Total TV Shows (**2,663**), Top Country (**United States**), and Top Genre (**International Movies**)[cite: 15].
+* **Temporal Growth & Top Producers:** Line chart tracking catalog additions from 2008–2021 alongside horizontal bar charts ranking top producing countries (US: 3.2K, India: 1.1K, UK: 0.6K)[cite: 15].
+* **Genre & Target Audience Distribution:** Visual breakdown of primary genres and target demographic groups (Adults: 4.0K, Teens: 2.6K, Kids: 2.1K)[cite: 15].
+* **Content Breakdown:** Donut chart illustrating the catalog split (**70% Movies vs. 30% TV Shows**)[cite: 15].
+
+#### Page 2: Movies vs. TV Shows Comparative Analysis
+* **Core Comparison Metrics:** Average Movie Length (**99.6 Min**), Average TV Seasons (**1.8 Seasons**), Average Release Year (**Movies 2013 \| TV 2017**), and Addition Speed indicators[cite: 16].
+* **Shifting Strategy Analysis:** Comparative stacked bar chart tracking annual release trends between Movies and TV Shows to identify strategic portfolio shifts over time[cite: 16].
+* **Duration & Season Granularity:** Grouped bar charts segmenting movie runtimes (Under 90 min, 90–120 min, Over 120 min) and TV show season longevity (1 Season vs. 2+ Seasons)[cite: 16].
+* **Interactive Navigation & Slicers:** Full navigation control with interactive slicers for Country, Audience rating, Release Year range sliders, and a one-click **Reset Filters** button[cite: 15, 16].
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── README.md                              <-- Master project overview & roadmap
+├── Task 1/
+│   ├── Task 1 - Documentation.pdf         <-- Detailed ETL and data cleaning decisions[cite: 2]
+│   └── Task 1 - Netflix data prep.pbix    <-- Power BI data model file[cite: 4]
+├── Task 2/
+│   └── Netflix Content Overview.pbix      <-- Multi-page Power BI dashboard[cite: 5]
+└── assets/                                <-- High-resolution UI screenshots & diagrams
